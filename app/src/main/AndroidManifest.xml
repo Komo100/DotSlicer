@@ -5,16 +5,17 @@
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
-        android:label=""
+        android:label="DotSlicer"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.DotSlicer">
         <activity
             android:name=".GameActivity"
             android:exported="false"
-            android:theme="@style/Theme.DotSlicer.NoActionBar" />
+            android:theme="@style/Theme.DotSlicer" />
         <activity
             android:name=".MainActivity"
+            android:theme="@style/Theme.DotSlicer"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

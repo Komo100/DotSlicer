@@ -3,6 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:background="#FFFFFF"
     android:padding="20sp">
 
         <ScrollView
@@ -28,7 +29,8 @@
                             android:layout_margin="30dp"
                             android:gravity="center"
                             android:text="@string/difficulty"
-                            android:textSize="32sp" />
+                            android:textSize="32sp"
+                            android:textColor="#000000"/>
 
                         <Button
                             android:id="@+id/button_easy"
