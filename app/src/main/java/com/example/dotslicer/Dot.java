@@ -44,7 +44,7 @@ public class Dot extends LinearLayout {
                 dY = getY() - e.getRawY();
                 break;
 
-            case MotionEvent.ACTION_MOVE;s
+            case MotionEvent.ACTION_MOVE:
 
                 this.animate()
                         .x(e.getRawX() + dX)
