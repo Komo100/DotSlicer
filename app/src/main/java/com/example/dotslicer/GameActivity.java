@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.KeyEvent;
+import android.view.MotionEvent;
+import android.view.View;
 
 import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,15 +24,13 @@ public class GameActivity extends AppCompatActivity {
 
     private Vector<Dot> vector_of_dots;
 
+    //float dX, dY;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         vector_of_dots = GenerateDots();
-    }
-
-    private int setColor(int dot_number) {
-        return Color.parseColor("#000000");
     }
 
     private Vector<Dot> GenerateDots() {
@@ -50,11 +50,11 @@ public class GameActivity extends AppCompatActivity {
             do {
                 Random random = new Random();
                 number = random.nextInt(9) + 1;
-                pos_y = (float)random.nextInt(height - 200) + 100;
-                pos_x = (float)random.nextInt(width - 200) + 100;
+                pos_y = (float)random.nextInt(height - 400) + 100;
+                pos_x = (float)random.nextInt(width - 400) + 100;
             } while(DotTooClose(vector_of_dots, pos_x, pos_y));
 
-            Dot dot = new Dot(getApplicationContext(), pos_x, pos_y, Color.BLACK, number);
+            Dot dot = new Dot(getApplicationContext(), pos_x, pos_y, number);
             layout.addView(dot);
             vector_of_dots.add(dot);
         }

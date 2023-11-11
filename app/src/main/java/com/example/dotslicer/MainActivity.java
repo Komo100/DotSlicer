@@ -1,5 +1,7 @@
 package com.example.dotslicer;
 
+import static android.content.Context.LAYOUT_INFLATER_SERVICE;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
@@ -9,7 +11,6 @@ import android.transition.Fade;
 import android.view.Gravity;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.widget.LinearLayout;
@@ -18,6 +19,7 @@ import android.widget.PopupWindow;
 public class MainActivity extends AppCompatActivity {
 
     private int difficulty_setting = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
