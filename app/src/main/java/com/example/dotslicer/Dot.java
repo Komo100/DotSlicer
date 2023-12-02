@@ -60,6 +60,7 @@ public class Dot extends LinearLayout {
         }
         return true;
     }
+
     public int getRadius() {
         return radius;
     }

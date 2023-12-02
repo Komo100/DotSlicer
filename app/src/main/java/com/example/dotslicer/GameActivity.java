@@ -1,14 +1,18 @@
 package com.example.dotslicer;
 
+import android.app.ActivityOptions;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.transition.Fade;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.Window;
 
 import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,9 +32,20 @@ public class GameActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        getWindow().requestFeature(Window.FEATURE_ACTIVITY_TRANSITIONS);
+        getWindow().setEnterTransition(new Fade());
+        getWindow().setExitTransition(new Fade());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         vector_of_dots = GenerateDots();
+        findViewById(R.id.button_exit_game).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent MainActivityIntent = new Intent(GameActivity.this, MainActivity.class);
+                GameActivity.this.startActivity(MainActivityIntent, ActivityOptions.makeSceneTransitionAnimation(GameActivity.this).toBundle());
+                finish();
+            }
+        });
     }
 
     private Vector<Dot> GenerateDots() {
