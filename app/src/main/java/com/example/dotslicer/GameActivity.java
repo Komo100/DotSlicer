@@ -13,6 +13,7 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.widget.TextView;
 
 import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,7 @@ import java.util.Vector;
 public class GameActivity extends AppCompatActivity {
 
     private Vector<Dot> vector_of_dots;
+    private Integer number_to_get = 20;
 
     //float dX, dY;
 
@@ -46,6 +48,9 @@ public class GameActivity extends AppCompatActivity {
                 finish();
             }
         });
+        final TextView number_to_get_tv = (TextView) findViewById(R.id.number_to_get);
+        number_to_get_tv.setText(
+                "Number to get: " + number_to_get.toString());
     }
 
     private Vector<Dot> GenerateDots() {
