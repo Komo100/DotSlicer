@@ -48,23 +48,25 @@ public class Dot extends AppCompatTextView {
     }
     @Override
     public boolean onTouchEvent(MotionEvent e) {
-        switch (e.getAction()) {
+        setCenter();
 
-            case MotionEvent.ACTION_DOWN:
+            switch (e.getAction()) {
 
-                dX = getX() - e.getRawX();
-                dY = getY() - e.getRawY();
-                ClickX = e.getX();
-                ClickY = e.getY();
-                isClick = true;
-                break;
-            case MotionEvent.ACTION_UP:
-                if(isClick) {
-                    Clicked = true;
-                }
-                break;
-            case MotionEvent.ACTION_MOVE:
-                if(true) {
+                case MotionEvent.ACTION_DOWN:
+
+                    dX = getX() - e.getRawX();
+                    dY = getY() - e.getRawY();
+                    ClickX = e.getX();
+                    ClickY = e.getY();
+                    isClick = true;
+                    break;
+                case MotionEvent.ACTION_UP:
+                    if (isClick) {
+                        Clicked = true;
+                    }
+                    break;
+                case MotionEvent.ACTION_MOVE:
+
                     this.animate()
                             .x(e.getRawX() + dX)
                             .y(e.getRawY() + dY)
@@ -73,22 +75,24 @@ public class Dot extends AppCompatTextView {
                     this.setX(e.getRawX() + dX);
                     this.setY(e.getRawY() + dY);
                     isClick = false;
-                }
-                break;
-            default:
-                return false;
-        }
+
+                    break;
+                default:
+                    return false;
+            }
         return true;
     }
 
+    private void setCenter() {
+        CenterX = this.getX() + radius;
+        CenterY = this.getY() + radius;
+    }
     public float getCenterX() {
         return this.getX() + radius;
     }
-
     public float getCenterY() {
         return this.getY() + radius;
     }
-
     public Integer getNumber() { return number; }
     public boolean isClicked() {
         return Clicked;
