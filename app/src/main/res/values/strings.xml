@@ -11,4 +11,6 @@
     <string name="exit">exit</string>
     <string name="number">number</string>
     <string name="number_to_get">number_to_get</string>
+    <string name="victory">You won!</string>
+    <string name="press_to_continue">Press to continue...</string>
 </resources>

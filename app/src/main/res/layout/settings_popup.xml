@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#FFFFFF"
     android:id="@+id/settings_popup"
     android:padding="20sp">
 
@@ -15,14 +14,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
+                    android:id='@+id/popup_no_back'
                     android:background="@drawable/settings_popup_border">
 
-                        <Button
-                            android:id="@+id/button_exit"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_margin="10dp"
-                            android:text="@string/exit" />
 
                         <TextView
                             android:layout_width="match_parent"
